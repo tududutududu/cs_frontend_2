@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Esperança - Página Inicial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">Instituto Esperança</div>
+                    
+                    <!-- Navegação Desktop -->
+                    <nav class="nav-desktop">
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li class="nav-item">
+                                <a href="projetos.html">Projetos Sociais</a>
+                                <ul class="submenu">
+                                    <li><a href="#educacao">Educação</a></li>
+                                    <li><a href="#alimentacao">Alimentação</a></li>
+                                    <li><a href="#voluntariado">Voluntariado</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="cadastro.html">Cadastro</a></li>
+                        </ul>
+                    </nav>
+                    
+                    <!-- Menu Hamburger Mobile -->
+                    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+                    
+                    <!-- Navegação Mobile -->
+                    <nav class="nav-mobile">
+                        <button class="close-menu" aria-label="Fechar menu">×</button>
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="projetos.html">Projetos Sociais</a></li>
+                            <li><a href="cadastro.html">Cadastro</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Overlay para menu mobile -->
+        <div class="overlay"></div>
+
+    <main>
+        <section class="container">
+            <h2>Sobre Nossa Organização</h2>
+            <div class="grid grid-1 grid-md-2 grid-lg-3">
+                <article class="card">
+                   <picture>
+                    <source srcset="imagens/missao.webp" type="image/webp">
+                    <source srcset="imagens/missao.jpg" type="image/jpeg"> 
+                    <img src="imagens/missao.jpg" alt="Voluntários do Instituto Esperança em ação comunitária" class="card-img">
+                </picture>
+                    <div class="card-content">
+                        <h3 class="card-title">Nossa Missão</h3>
+                        <p class="card-text">O Instituto Esperança atua há 15 anos promovendo transformação social através de educação,
+                             capacitação e apoio às comunidades em situação de vulnerabilidade.</p>
+                        <div class="badge badge-primary">Educação</div>
+                        <button class="btn btn-primary mt-3">Saiba Mais</button>
+                    </div>
+                </article>
+                
+                <article class="card">
+                    <picture>
+                    <source srcset="imagens/alimentacao.webp" type="image/webp">
+                    <source srcset="imagens/alimentacao.jpg" type="image/jpeg"> 
+                    <img src="imagens/alimentacao.jpg" alt="alimentacao" class="card-img">
+                </picture>
+                  
+                    <div class="card-content">
+                        <h3 class="card-title">Nossa História</h3>
+                        <p class="card-text"> Fundado em 2009, já impactamos mais de 50.000 pessoas através de nossos programas sociais e projetos de desenvolvimento comunitário.</p>
+                        <div class="badge badge-primary">História</div>
+                        <button class="btn btn-primary mt-3">Saiba Mais</button>
+                    </div>
+                </article>
+                 
+                <article class="card">
+                    <picture>
+                    <source srcset="imagens/educacao.webp" type="image/webp">
+                    <source srcset="imagens/educacao.jpg" type="image/jpeg"> 
+                    <img src="imagens/educacao.jpg" alt="educacao" class="card-img">
+                </picture>
+                    <div class="card-content">
+                        <h3 class="card-title">Educação para Todos</h3>
+                    <p class="card-text">Oferecemos aulas de reforço escolar, cursos profissionalizantes e alfabetização.</p>
+                    <div class="badge badge-primary">Educação</div>
+                    <button class="btn btn-primary mt-3">Saiba Mais</button>
+                    </div>
+                 
+                </article>
+
+            </div>
+            
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Instituto Esperança. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        // Menu Mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMobile = document.querySelector('.nav-mobile');
+        const closeMenu = document.querySelector('.close-menu');
+        const overlay = document.querySelector('.overlay');
+
+        menuToggle.addEventListener('click', () => {
+            navMobile.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenu.addEventListener('click', closeMobileMenu);
+        overlay.addEventListener('click', closeMobileMenu);
+
+        function closeMobileMenu() {
+            navMobile.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-mobile a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    </script>
+</body>
+</html>

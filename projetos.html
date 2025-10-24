@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos Sociais - Instituto Esperança</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">Instituto Esperança</div>
+            
+            <!-- Navegação Desktop -->
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li class="nav-item">
+                        <a href="projetos.html">Projetos Sociais</a>
+                        <ul class="submenu">
+                            <li><a href="#educacao">Educação</a></li>
+                            <li><a href="#alimentacao">Alimentação</a></li>
+                            <li><a href="#voluntariado">Voluntariado</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Menu Hamburger Mobile -->
+            <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+            
+            <!-- Navegação Mobile -->
+            <nav class="nav-mobile">
+                <button class="close-menu" aria-label="Fechar menu">×</button>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="projetos.html">Projetos Sociais</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay para menu mobile -->
+<div class="overlay"></div>
+
+    <main>
+        <section class="container">
+            <h2>Nossos Projetos Sociais</h2>
+            <div class="grid grid-1 grid-md-2 grid-lg-3">
+                <article class="card">
+                    <picture>
+                        <source srcset="imagens/educacao.webp" type="image/webp">
+                        <source srcset="imagens/educacao.jpg" type="image/jpeg"> 
+                        <img src="imagens/educacao.jpg" alt="Crianças em sala de aula do projeto Educação para Todos" class="card-img">
+                    </picture>
+                    <div class="card-content">
+                        <h3 class="card-title">Educação para Todos</h3>
+                        <p class="card-text">Oferecemos aulas de reforço escolar, cursos profissionalizantes e alfabetização para jovens e adultos.</p>
+                        <div class="badge badge-primary">Educação</div>
+                        <button class="btn btn-primary mt-3">Saiba Mais</button>
+                    </div>
+                </article>
+                
+                <article class="card">
+                    <picture>
+                    <source srcset="imagens/alimentacao.webp" type="image/webp">
+                    <source srcset="imagens/alimentacao.jpg" type="image/jpeg"> 
+                    <img src="imagens/alimentacao.jpg" alt="Voluntários distribuindo alimentos" class="card-img">
+                </picture>
+                    <div class="card-content">
+                        <h3 class="card-title">Alimentando Vidas</h3>
+                        <p class="card-text">Distribuição de cestas básicas e refeições para famílias em situação de insegurança alimentar.</p>
+                        <div class="badge badge-primary">História</div>
+                        <button class="btn btn-primary mt-3">Saiba Mais</button>
+                    </div>
+                </article>
+                 
+                <article class="card">
+                    <picture>
+                    <source srcset="imagens/missao.webp" type="image/webp">
+                    <source srcset="imagens/missao.jpg" type="image/jpeg"> 
+                    <img src="imagens/missao.jpg" alt="Voluntários do Instituto Esperança em ação comunitária" class="card-img">
+                </picture>
+                    <div class="card-content">
+                        <h3 class="card-title">Voluntariado</h3>
+                    <p class="card-text">Nossos voluntários são a base de todos os projetos. Junte-se a nós e faça a diferença!</p>
+                    <div class="badge badge-primary">Voluntariado</div>
+                    <button class="btn btn-primary mt-3">Saiba Mais</button>
+                    </div>
+                 
+                </article>
+
+            </div>
+            <div class="grid grid-1" >
+                 <h2>Como Doar</h2>
+            <p>Sua doação é fundamental para mantermos nossos projetos. Existem várias formas de contribuir:</p>
+            
+            <article>
+                <h3>Doação Financeira</h3>
+                <p>Banco: 001 | Agência: 1234 | Conta: 56789-0</p>
+                <p>PIX: CNPJ 12.345.678/0001-90</p>
+            </article>
+            
+            <article>
+                <h3>Doação de Materiais</h3>
+                <p>Aceitamos doações de:</p>
+                <ul style="padding-left: var(--space-2);">
+                    <li>Alimentos não perecíveis</li>
+                    <li>Material escolar</li>
+                    <li>Roupas e calçados</li>
+                    <li>Produtos de higiene pessoal</li>
+                </ul>
+            </article>
+            
+            <article>
+                <h3>Doação de Tempo</h3>
+                <p>Torne-se um voluntário e doe seu tempo e habilidades para transformar vidas.</p>
+            </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Instituto Esperança. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        // Menu Mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMobile = document.querySelector('.nav-mobile');
+        const closeMenu = document.querySelector('.close-menu');
+        const overlay = document.querySelector('.overlay');
+
+        menuToggle.addEventListener('click', () => {
+            navMobile.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenu.addEventListener('click', closeMobileMenu);
+        overlay.addEventListener('click', closeMobileMenu);
+
+        function closeMobileMenu() {
+            navMobile.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-mobile a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    </script>
+</body>
+</html>
